@@ -1,0 +1,73 @@
+A) Arrays 
+An array is a numbered sequence of elements of a single type with a fixed lenght.
+    in Go, they look like this;
+var x [5] int
+
+x is an example of an array which is composed of 5 int.
+
+package main() {
+    var x [5]int
+    x[4] = 100
+    fmt.Println(x)
+}
+x[4] = 100; the fifth item in the array will changed to 100.
+result = [0 0 0 0 100]
+
+the values of an array is indexed from zero.
+
+var total float64 = 0
+for _, value := range x {
+    total += value
+} 
+fmt.Println(total / float64(len(x)))
+
+From the above code, the underscore (_) is used to tell the compiler that we don't need this. (IN this case, we dont need the iterator variable.)
+
+Go also provides a shorter syntax for creating arrays;
+
+x := [5]float64{ 98, 93, 77, 82, 83 }
+
+x := [5]float64{
+    98,
+    93,
+    77,
+    82,
+    83,
+}
+
+Notice the comma (,) after the last value in the array. It is required go.
+
+The solution above shows a major issue in array; their lenght is fixed and part of the array type name. In order to remove the last item, we actually had to change the type as well. Go's solution to this problem is to use a different type: slices
+
+B) Slices
+A slice is a segment of an array.
+arr := [5]float64{1,2,3,4,5}
+x := arr[0:5]
+
+arr[0:5] returns [1,2,3,4,5], arr[1:4] returns [2,3,4].
+
+Slice functions
+Go includes two builtin functions to assist with slices;
+"append" and "copy"
+
+append;
+func main() {
+    slice1 := []int{1,2,3}
+    slice2 := append(slice1, 4, 5)
+    fmt.Println(slice1, slice2)
+}
+
+C) Maps
+A map is an unordered collection of key-value pairs.
+Also known as an associative array, a hash table or a
+dictionary, maps are used to look up a value by its associated
+key. Here is an example of a map in Go:
+
+var x map[string]int
+
+The map type is represented by the keyword map, followed
+by the key type in brackets and finally the value
+type. If you were to read this out loud you would say “x
+is a map of strings to ints.”
+
+arrays and slices maps can be accessed using brackets.

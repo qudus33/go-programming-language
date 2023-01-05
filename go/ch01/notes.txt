@@ -1,0 +1,8 @@
+Install go on your operating system.
+
+open the terminal or command prompt and type:-
+
+go version
+
+This displays the version of the go compiler.
+

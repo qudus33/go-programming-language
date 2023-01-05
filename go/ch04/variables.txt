@@ -1,0 +1,52 @@
+Variable;
+A variable is a storage location with a specific type and an associated name.
+
+variables are first created by using the var keyword, then specifying the variable name e.g name and the data type e.g string then finally assigning a value to the variable Hello world
+
+var name string = "Hello world"
+fmt.Println(name)
+
+var name string
+name = "Abdulqudus"
+fmt.Println(name)
+
+var x string
+x = "first "
+x = x + "second" or x+= "second"
+
+The symbol for equality is == 
+var x string = "hello"
+var y string = "world"
+fmt.Println(x == y)
+
+variables can be also be created this way;
+name := "qudus"
+x := 5
+y := 10
+
+Another way of writing a program is;
+package main
+
+import "fmt"
+
+var x strint = "Hello world"
+func main() {
+    fmt.Println(x)
+}
+
+Constants;
+
+Constants are basically variable whose values cannot be changed later.
+
+use the "const" keyword
+
+** Defining multiple variable
+use the "var" or "const" keyword followed by parenthesis
+
+var (
+    a = 5
+    b = 10
+    c = 15
+)
+
+You can also read user input with scanf

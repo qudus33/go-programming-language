@@ -1,0 +1,64 @@
+For statement
+
+for statement allows us to repeat a list of statements (a block) multiple times.
+e.g 
+i := 1
+for i <= 10 {
+    fmt.Println(i)
+    i = i + 1
+}
+
+Other programming languages have a lot of different
+types of loops (while, do, until, foreach, …) but Go only
+has one that can be used in a variety of different ways.
+
+IF statement
+An if statement is similar to a for statement in that it has a condition followed by a block.
+If the condition evaluates to true then the block after the condition is run, otherwise either the block is skipped or if the else block is present.
+
+if i%2 == 0 {
+			fmt.Println(i, "even")
+		} else {
+			fmt.Println(i, "odd")
+	}
+
+if statement can also have else if parts;
+if i % 2 == 0 {
+    // divisible by 2
+} else if i % 3 == 0 {
+    // divisible by 3
+} else if i % 4 == 0 {
+    // divisible by 4
+}
+
+
+Switch statement
+
+suppose we wanted to write a program that printed the english names for number, it can be written as;
+
+if i == 0 {
+    fmt.Println("Zero")
+} else if i == 1 {
+    fmt.Println("One")
+} else if i == 2 {
+    fmt.Println("Two")
+} else if i == 3 {
+    fmt.Println("Three")
+} else if i == 4 {
+    fmt.Println("Four")
+} else if i == 5 {
+    fmt.Println("Five")
+}
+
+writing this way can be tedious. Go provides another way by using the switch statement. It can be re-written as;
+switch i {
+case 0: fmt.Println("Zero")
+case 1: fmt.Println("One")
+case 2: fmt.Println("Two")
+case 3: fmt.Println("Three")
+case 4: fmt.Println("Four")
+case 5: fmt.Println("Five")
+default: fmt.Println("Unknown Number")
+}
+
+A switch statement starts with the keyword switch followed by the an expression (in the case 'i' from the above example) and 

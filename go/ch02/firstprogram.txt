@@ -1,0 +1,39 @@
+# go run command compiles the program in a temp directory and runs the program file.
+
+# package main - Known as a package declaration.
+    	packages are go's way of organizing and reusing code.
+
+#    Libaries are collections of code that are packaged together so that we can use them in programs.
+
+#    import keyword is used to import packages to use with the program.
+
+#    fmt package or "format" implements formating inputs and outputs.
+
+#    The line that starts with // means it is a comment. comment are ignored by the go compiler.
+
+#    comment can be single line // or multileine /* */
+
+    func main() {
+        fmt.Println("Hello world!")
+    }
+
+#    Functions are building blocks of go programming language. they have inputs, outputs and a series of steps called statements which are executed in order.
+
+#    All functions start with the keyword "func" followed ny the name of the function main()
+
+#    fmt.Println("Hello world!")
+
+    The statment is made up of three components:-
+    1) We access another function inside the fmt package called Println i.e Print Line.
+    2)We create a new string that contains the hello world
+    3)We invoke (also call or execute) that function with the string as the first and only argument.
+
+In summary
+1)Start by declaring a package
+2)Import a package such as the fmt package
+3)create a function and to print on a new line, use te Println function in the fmt package
+
+# finally we execute the  program with the "go run <program name>"
+
+for more about Println, type;
+go doc fmt Println

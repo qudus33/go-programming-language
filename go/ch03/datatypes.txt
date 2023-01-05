@@ -1,0 +1,60 @@
+Numbers
+A) Integers are number without decimal points for example 129, 38, 1, etc.
+computers represents number in binary or base 2
+e.g 2 = 10, 3=11, 4=100 etc
+
+go integer types are uint8, uint16, uint32, uint64, int8, int16, int32, and int64.
+
+8, 16, 32 and 64 tells how many bits each of the types use.
+
+uint means unsigned integer. int means signed integer.
+
+unsigned Integers only contain positive numbers or zero.
+
+In addition there are two alias types;
+byte = uint8 &
+rune = int32
+
+1 byte = 8 bits
+1024 bytes = 1 kilobytes
+
+There are also 3 machine dependent interger types;
+uint, int and uintptr. 
+They are machine dependent because their size depends on the type of architecture you are using.
+
+Generally, when working with integers, use int type.
+
+2) Floating point numbers:
+Floating point numbers are numbers that contain a  decimal component. for example; 1.234, 123.4, 0.0001234.
+
+go has two floating point types;
+float 32 or single precision
+float 64 or double precision
+
+and two additional types for representing complex numbers;
+complex64 and complex128
+
+we should stick with float64 when working with floating point numbers.
+
+B) Strings
+String literals can be created using double quotes ar back ticks for example;
+"Hello world!"
+`Hello world!`
+
+The difference between these is that quoted strings can not contain newlines and they allow special escape sequences. For example \n gets replace with a newline and \t gets replaced with a tab character.
+
+Finding the length of a string;
+len("Hello world")
+
+"Hello World"[1]
+returns the indexed value which returns byte representation of "e"
+
+
+C) Booleans
+A boolean value (named after George boole) is a special 1 bit integer type used to represent true and false (or on and off). Three logical operators are used with boolean values;
+
+&&  -   and
+||  -   or
+!   -   not
+
+
