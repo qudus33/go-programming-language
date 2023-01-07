@@ -1,0 +1,40 @@
+An argument is copied to the function that is called. for example;
+
+func zero(x int) {
+    x = 0
+} func main() {
+    x := 5
+    zero(x)
+    fmt.Println(x) // x is still 5
+}
+
+In this program the zero function will not modify the original x variable in the main function. But what if we wanted to? One way to do this is to use a special data type known as a pointer:
+
+Pointers reference a location in memory where a value
+is stored rather than the value itself.
+
+func zero(xPtr *int) {
+    *xPtr = 0
+} func main() {
+    x := 5
+    zero(&x)
+    fmt.Println(x) // x is 0
+}
+
+1) The * and & operators
+In Go a pointer is represented using the * (asterisk) character followed by the type of the stored value. In the zero function xPtr is a pointer to an int.
+
+Finally we use the & operator to find the address of a variable.
+
+2) new
+Another way to get a pointer is to use the built-in new function:
+
+func one(xPtr *int) {
+    *xPtr = 1
+} 
+func main() {
+    xPtr := new(int)
+    one(xPtr)
+    fmt.Println(*xPtr) // x is 1
+}
+

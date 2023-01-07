@@ -1,0 +1,106 @@
+1) What is a function;
+A function is an independent section of a code that is used to perform a particular task.
+
+in Go;
+function is an independent section of code that maps
+zero or more input parameters to zero or more output
+parameters. Functions (also known as procedures or
+subroutines) are often represented as a black box: (the black box represents the function)
+
+package main
+
+import "fmt"
+
+func hello() string {
+	return "Hello world!"
+}
+
+func main() {
+	fmt.Println(hello())
+}
+
+2) Returning multiple functions
+Go is also capable of returning multiple values from a
+function
+      func-name   return type
+         |          |
+func number() (int, int) {
+	return 10, 20
+}
+
+func main() {
+	x, y := number()
+	fmt.Println(x)
+	fmt.Println(y)
+}
+
+Multiple values are often used to return an error value along with the result (x, err := number()), or a boolean to indicate success (x, ok := number()).
+
+3) Variadic Functions
+func add(args ...int) int {
+    total := 0
+    for _, v := range args {
+        total += v
+    } return total
+} 
+func main() {
+    fmt.Println(add(1,2,3))
+}
+
+By using ... before the type name of the last parameter
+you can indicate that it takes zero or more of those
+parameters. In this case we take zero or more ints. We
+invoke the function like any other function except we
+can pass as many ints as we want.
+
+D) Closure
+It is possible to create functions inside of functions:
+
+func main() {
+    add := func(x, y int) int {
+        return x + y
+    } 
+    fmt.Println(add(1,1))
+}
+
+One way to use closure is by writing a function which
+returns another function which – when called – can
+generate a sequence of numbers.
+
+5) Recursion
+a function is able to call itself. Here is one way
+to compute the factorial of a number:
+
+func factorial(x uint) uint {
+    if x == 0 {
+        return 1
+    }
+    return x * factorial(x-1)
+}
+
+6) Defer, Panic & Recover
+Go has a special statement called defer which schedules a function call to be run after the function completes;
+
+package main
+import "fmt"
+func first() {
+    fmt.Println("1st")
+} 
+func second() {
+    fmt.Println("2nd")
+} 
+func main() {
+    defer second()
+    first()
+}
+
+func main() {
+    first()
+    second()
+}
+
+defer is often used when resources need to be freed in some way. For example when we open a file we need to make sure to close it later. With defer:
+
+f, _ := os.Open(filename)
+defer f.Close()
+

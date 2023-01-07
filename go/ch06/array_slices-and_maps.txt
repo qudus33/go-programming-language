@@ -71,3 +71,12 @@ type. If you were to read this out loud you would say “x
 is a map of strings to ints.”
 
 arrays and slices maps can be accessed using brackets.
+
+The variable in a map needs to be initialized.
+
+x := make(map[string]int)
+x["key"] = 10
+fmt.Println(x["key"])
+
+-- Maps are also often used to store general information
+
